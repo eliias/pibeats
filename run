@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+docker build -t pibeats .
+docker run --rm --env-file .env -v `pwd`/build:/build pibeats
+
+echo "Build done 🎉"

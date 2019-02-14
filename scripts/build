@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+go get github.com/elastic/beats
+
+DIR=/go/src/github.com/elastic/beats
+
+cd $DIR
+git checkout $ELASTIC_VERSION
+
+GOARCH=arm
+
+#cd $DIR/auditbeat && go build && cp $DIR/auditbeat/auditbeat /build
+cd $DIR/filebeat && go build && cp $DIR/filebeat/filebeat /build
+#cd $DIR/heartbeat && go build && cp $DIR/heartbeat/heartbeat /build
+#cd $DIR/journalbeat && go build && cp $DIR/journalbeat/journalbeat /build
+cd $DIR/metricbeat && go build && cp $DIR/metricbeat/metricbeat /build
+#cd $DIR/packetbeat && go build && cp $DIR/packetbeat/packetbeat /build
